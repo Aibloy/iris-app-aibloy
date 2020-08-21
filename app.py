@@ -13,7 +13,6 @@ import streamlit as st
 import pandas as pd 
 import matplotlib.pyplot as plt 
 import seaborn as sns 
-from PIL import Image,ImageEnhance, ImageFilter
 #-------------------------------------------------------------
 #Title
 st.title("IRIS EDA ")
@@ -82,19 +81,7 @@ if st.sidebar.checkbox("Show columns"):
     if st.sidebar.checkbox("Show Histogram: "):
         st.write(data[col].plot(kind="hist"))
         st.pyplot()
-    
-#-------------------------------------------------------------
-@st.cache
-def load_image(path):
-    imagen = Image.open(path)
-    return imagen
-    
 
-tipos = data["Species"].unique()
-species_type = st.sidebar.radio("Select type: ", tuple(tipos))
-st.title(f"Showing {species_type}")
-st.image(load_image(f"{species_type}.jpg"))
-    
 
      
         
