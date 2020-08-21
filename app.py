@@ -7,12 +7,11 @@ Created on Mon Aug  3 20:38:55 2020
 # Run en linea de comandos:  !streamlit run IRIS_APP.py
 
 
-import streamlit as st
+
 
 # EDA 
+import streamlit as st
 import pandas as pd 
-import matplotlib.pyplot as plt 
-import seaborn as sns 
 #-------------------------------------------------------------
 #Title
 st.title("IRIS EDA ")
@@ -67,19 +66,3 @@ if st.sidebar.checkbox("Show columns"):
     col = st.sidebar.selectbox("Select Column",tuple(columnas))
     st.write(data[col])
     
-
-
-     
-        
-
-
-    
-    
-
-    
-
-    
-    
-
-
-
