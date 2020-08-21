@@ -84,7 +84,6 @@ if st.sidebar.checkbox("Show columns"):
         st.pyplot()
     
 #-------------------------------------------------------------
-img_width = 300
 @st.cache
 def load_image(path):
     imagen = Image.open(path)
@@ -95,7 +94,6 @@ tipos = data["Species"].unique()
 species_type = st.sidebar.radio("Select type: ", tuple(tipos))
 st.title(f"Showing {species_type}")
 st.image(load_image(f"{species_type}.jpg"))
-#-------------------------------------------------------------
     
 
      
