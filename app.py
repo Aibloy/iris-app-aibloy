@@ -47,7 +47,6 @@ if st.sidebar.checkbox("Show Column Names"):
 if st.sidebar.checkbox("Show summary"):
     st.write(data.describe())
         
-    
 #-------------------------------------------------------------
 d = ["Rows","Columns","ALL"]
 data_dim = st.sidebar.radio("Select Dimensions to see:",tuple(d))
@@ -61,15 +60,6 @@ for i in d:
         else:
             st.header(f"Shape {i} : {data.shape[d.index(i)]}")
     
-    
-if st.sidebar.checkbox("Show Correlations "):
-    corr = data.corr()
-    cmap = plt.cm.RdBu
-    plt.title('Correlación Pearson', size=15)
-    st.write(sns.heatmap(corr, cmap=cmap,  annot=True, linewidths=1))
-    st.pyplot()
-
-
 #-------------------------------------------------------------
 if st.sidebar.checkbox("Show columns"):
     # Select Column:
@@ -77,10 +67,6 @@ if st.sidebar.checkbox("Show columns"):
     col = st.sidebar.selectbox("Select Column",tuple(columnas))
     st.write(data[col])
     
-    #-------------------------------------------------------------
-    if st.sidebar.checkbox("Show Histogram: "):
-        st.write(data[col].plot(kind="hist"))
-        st.pyplot()
 
 
      
