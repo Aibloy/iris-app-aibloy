@@ -21,7 +21,7 @@ st.header("Streamlit App")
 #-------------------------------------------------------------
 # Dataframe
 
-path = "iris.csv"
+path = "Iris.csv"
 #-------------------------------------------------------------
 @st.cache
 def load_data(path):
