@@ -88,24 +88,13 @@ img_width = 300
 @st.cache
 def load_image(path):
     imagen = Image.open(path)
-    I = ImageEnhance.Contrast(imagen)
-    n = st.slider("Image Contrast", 1.0,4.0)
-    img_width = st.slider("Image Width",300,500)
-    st.image(I.enhance(n),width = img_width)
     return imagen
     
 
 tipos = data["Species"].unique()
 species_type = st.sidebar.radio("Select type: ", tuple(tipos))
 st.title(f"Showing {species_type}")
-
-
-img_width = st.slider("Set Image Width: ",300,500)
-if img_width:
-    I = load_image(f"{species_type}.jpg")
-    st.image(I, width=img_width)
-    
-
+st.image(load_image(f"{species_type}.jpg"))
 #-------------------------------------------------------------
     
 
